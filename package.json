@@ -1,0 +1,28 @@
+{
+  "name": "derouter",
+  "version": "0.1.1",
+  "description": "Declarative router module for Express.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "basic-example": "node ./example/basic/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomasKavan/derouter.git"
+  },
+  "keywords": [
+    "express",
+    "router",
+    "declarative"
+  ],
+  "author": "Tomas Kavan <tomas.kavan@melowntech.com>",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/tomasKavan/derouter/issues"
+  },
+  "homepage": "https://github.com/tomasKavan/derouter#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
