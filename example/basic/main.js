@@ -13,8 +13,8 @@
  */
 
 // Load modules
-import express from express
-import derouter from '../../main.js'
+const express = require('express')
+const derouter = require('../../main.js')
 
 const routerDeclaration = {
   'GET /hello/:name' : [
