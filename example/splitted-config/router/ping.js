@@ -9,6 +9,27 @@
   */
 module.exports = {
   'GET /ping' : [
-    'ping'
+
   ]
+}
+
+module.exports = {
+    prefix: '/ping',
+    middleware: [
+        (req, res, next) => {
+            console.log('mping1')
+            next()
+        },
+        (req, res, next) => {
+            console.log('mping2')
+            next()
+        }
+    ],
+    routes: {
+        GET: {
+            '/': [
+                'ping'
+            ]
+        }
+    }
 }
