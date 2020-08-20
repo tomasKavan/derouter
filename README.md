@@ -25,7 +25,7 @@ app.use(bodyParser.json({ limit: '50mb' }));
 /**
  * Load routes
  */
-const routerDir = './src/router/routes'
+const routerDir = './src/routes/routes'
 
 /**
  * 

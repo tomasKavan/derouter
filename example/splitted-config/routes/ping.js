@@ -5,7 +5,7 @@
  */
 
  /**
-  * Partial router configuration. With ping route
+  * Partial routes configuration. With ping route
   */
 module.exports = {
   'GET /ping' : [
@@ -17,18 +17,20 @@ module.exports = {
     prefix: '/ping',
     middleware: [
         (req, res, next) => {
-            console.log('mping1')
+            console.log('--- ping middleware 1 ---')
+
             next()
         },
         (req, res, next) => {
-            console.log('mping2')
+            console.log('--- ping middleware 2 ---')
+
             next()
         }
     ],
     routes: {
         GET: {
             '/': [
-                'ping'
+                'actions.ping'
             ]
         }
     }

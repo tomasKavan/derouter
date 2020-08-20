@@ -5,11 +5,9 @@
  */
 
 /**
- * Splitted config example of derouter module usage.
+ * Basic example of derouter module usage.
  * Creates basic API server: 1 route GET /hello with 2 actions
- * And 1 route GET /ping with 1 ation. Each route is declared in
- * separate file in ./router directory.
- * To run use command: `node ./example/splitted-config/main.js`
+ * To run use command: `node ./example/basic/main.js`
  * Application is running on the port 8083 (can be changed with
  * `--PORT` option).
  */
@@ -18,11 +16,14 @@
 const express = require('express')
 const derouter = require('../../main.js')
 
-const routerDir = './router'
+/**
+ * Use relative path from main nodejs script file to routes
+ * @type {string}
+ */
+const routerDeclarationPath = './routes'
 
 const app = express()
-
-app.use(derouter(routerDir))
+app.use(derouter(routerDeclarationPath))
 
 const port = 8083
 app.listen(port, () => {

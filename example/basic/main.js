@@ -17,10 +17,25 @@ const express = require('express')
 const derouter = require('../../main.js')
 
 const routerDeclaration = {
-  'GET /hello/:name' : [
-    'action.today->date',
-    'action.greet:#Greetings:&.date:params.name'
-  ]
+  prefix: '/hello',
+  middleware: [
+    (req, res, next) => {
+      console.log('----hello middleware---')
+
+      /**
+       * Necessary to call function next() (Express middleware)
+       */
+      next()
+    }
+  ],
+  routes: {
+    GET: {
+      '/:name': [
+        'action.today->date',
+        'action.greet:#Greetings:&.date:params.name'
+      ]
+    }
+  }
 }
 
 const app = express()
